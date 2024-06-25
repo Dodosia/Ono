@@ -1,0 +1,3 @@
+[submodule "Ono/vendor/spdlog"]
+	path = Ono/vendor/spdlog
+	url = https://github.com/gabime/spdlog
