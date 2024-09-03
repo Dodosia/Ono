@@ -4,11 +4,20 @@ workspace "Ono"
 	configurations
 	{
 		"Debug",
-		"release",
+		"Release",
 		"Dist"
 	}
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
+
+IncludeDir = {}
+IncludeDir["GLFW"] = "Ono/vendor/GLFW/include"
+IncludeDir["GLAD"] = "Ono/vendor/GLAD/include"
+IncludeDir["ImGui"] = "Ono/vendor/imgui"
+
+include "Ono/vendor/GLFW"
+include "Ono/vendor/GlAD"
+include "Ono/vendor/imgui"
 
 project "Ono"
 	location "Ono"
@@ -30,7 +39,17 @@ project "Ono"
 	includedirs
 	{
 		"%{prj.name}/vendor/spdlog/include",
-		"%{prj.name}/src"
+		"%{prj.name}/src",
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.GLAD}",
+		"%{IncludeDir.ImGui}"
+	}
+
+	links
+	{
+		"GLFW",
+		"GLAD",
+		"ImGui"
 	}
 
 	filter "system:windows"
@@ -41,7 +60,9 @@ project "Ono"
 		defines
 		{
 			"ONO_PLATFORM_WINDOWS",
-			"ONO_BUILD_DLL"
+			"VOLK_IMPLEMENTATION",
+			"ONO_BUILD_DLL",
+			"ONO_ENABLE_ASSERTS"
 		}
 
 		postbuildcommands
@@ -51,14 +72,17 @@ project "Ono"
 
 	filter "configurations:Debug"
 		defines "ONO_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "ONO_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "ONO_DIST"
+		buildoptions "/MD"
 		optimize "On"
 
 project "Sandbox"
@@ -93,17 +117,22 @@ project "Sandbox"
 		
 		defines
 		{
-			"ONO_PLATFORM_WINDOWS"
+			"ONO_PLATFORM_WINDOWS",
+			"ONO_PLATFORM_VULKAN",
+			"ONO_ENABLE_ASSERTS"
 		}
 
 	filter "configurations:Debug"
 		defines "ONO_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "ONO_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "ONO_DIST"
+		buildoptions "/MD"
 		optimize "On"

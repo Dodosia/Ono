@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Ono">
+      <UniqueIdentifier>{9111880B-FD1A-887C-8696-9E7CF29E937C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Windows">
+      <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Ono.h" />
+    <ClInclude Include="src\Ono\Application.h">
+      <Filter>Ono</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Ono\Core.h">
+      <Filter>Ono</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Ono\EntryPoint.h">
+      <Filter>Ono</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Ono\Layer.h">
+      <Filter>Ono</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Ono\LayerStack.h">
+      <Filter>Ono</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Ono\Log.h">
+      <Filter>Ono</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Ono\Window.h">
+      <Filter>Ono</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
+      <Filter>Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\onopch.h" />
+    <ClInclude Include="src\Ono\ImGui\ImGuiLayer.h" />
+    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Ono\Application.cpp">
+      <Filter>Ono</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Ono\Layer.cpp">
+      <Filter>Ono</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Ono\LayerStack.cpp">
+      <Filter>Ono</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Ono\Log.cpp">
+      <Filter>Ono</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
+      <Filter>Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\onopch.cpp" />
+    <ClCompile Include="src\Ono\ImGui\ImGuiLayer.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
+  </ItemGroup>
+</Project>

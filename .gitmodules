@@ -1,3 +1,9 @@
 [submodule "Ono/vendor/spdlog"]
 	path = Ono/vendor/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule "Ono/vendor/GLFW"]
+	path = Ono/vendor/GLFW
+	url = https://github.com/TheCherno/glfw.git
+[submodule "Ono/vendor/imgui"]
+	path = Ono/vendor/imgui
+	url = https://github.com/ocornut/imgui.git

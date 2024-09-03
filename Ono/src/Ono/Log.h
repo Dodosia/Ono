@@ -30,3 +30,9 @@ namespace Ono
 #define ONO_ERROR(...) ::Ono::Log::GetClientLogger()->error(__VA_ARGS__)
 #define ONO_FATAL(...) ::Ono::Log::GetClientLogger()->fatal(__VA_ARGS__)
 
+#define VK_CHECK_SUCCESS(x, y, z) do { \
+	if((x) != VK_SUCCESS) \
+	{ ONO_CORE_ERROR(y); } \
+	else \
+	{ ONO_CORE_INFO(y); } \
+} while (0)

@@ -8,10 +8,7 @@ int main(int argc, char** argv)
 {
 	Ono::Log::Init();
 
-	ONO_CORE_TRACE("Trace");
-	ONO_WARN("Error!");
-
-	auto app = Ono::CreateApplication();
+	Ono::Application* app = Ono::CreateApplication();
 	app->Run();
 	delete app;
 }
