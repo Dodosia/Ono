@@ -4,8 +4,26 @@
     <Filter Include="Ono">
       <UniqueIdentifier>{9111880B-FD1A-887C-8696-9E7CF29E937C}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Ono\Core">
+      <UniqueIdentifier>{89D8EF7D-75A5-4A89-9EBE-38318AEA7F17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ono\ImGui">
+      <UniqueIdentifier>{7BAF553C-E719-0AB3-3058-BB589C01E807}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ono\Renderer">
+      <UniqueIdentifier>{57A8B2F8-430B-429D-EC90-7A53D8D20D20}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Platform">
       <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\OpenGL">
+      <UniqueIdentifier>{1E7D2C1D-8A08-9AE1-9319-1DD6FF23F6E1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\OpenGL\Shaders">
+      <UniqueIdentifier>{F7DFD241-6317-1BD9-6C21-7FFCD8D741D2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Vulkan">
+      <UniqueIdentifier>{6AE1DE2D-D66C-4CF2-DF7D-CFE64B88A8F2}</UniqueIdentifier>
     </Filter>
     <Filter Include="Platform\Windows">
       <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
@@ -13,52 +31,84 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Ono.h" />
-    <ClInclude Include="src\Ono\Application.h">
-      <Filter>Ono</Filter>
+    <ClInclude Include="src\Ono\Core\App.h">
+      <Filter>Ono\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Ono\Core.h">
-      <Filter>Ono</Filter>
+    <ClInclude Include="src\Ono\Core\Core.h">
+      <Filter>Ono\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Ono\EntryPoint.h">
-      <Filter>Ono</Filter>
+    <ClInclude Include="src\Ono\Core\EntryPoint.h">
+      <Filter>Ono\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Ono\Layer.h">
-      <Filter>Ono</Filter>
+    <ClInclude Include="src\Ono\Core\Layer.h">
+      <Filter>Ono\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Ono\LayerStack.h">
-      <Filter>Ono</Filter>
+    <ClInclude Include="src\Ono\Core\LayerStack.h">
+      <Filter>Ono\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Ono\Log.h">
-      <Filter>Ono</Filter>
+    <ClInclude Include="src\Ono\Core\Window.h">
+      <Filter>Ono\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Ono\Window.h">
-      <Filter>Ono</Filter>
+    <ClInclude Include="src\Ono\ImGui\ImGuiLayer.h">
+      <Filter>Ono\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Ono\Renderer\Renderer.h">
+      <Filter>Ono\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLFrameBuffer.h">
+      <Filter>Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLIndexBuffer.h">
+      <Filter>Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLShader.h">
+      <Filter>Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLSwapChain.h">
+      <Filter>Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLTexture.h">
+      <Filter>Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLVertexBuffer.h">
+      <Filter>Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\Shaders\LoadShaders.h">
+      <Filter>Platform\OpenGL\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Vulkan\VkRenderer.h">
+      <Filter>Platform\Vulkan</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
       <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\onopch.h" />
-    <ClInclude Include="src\Ono\ImGui\ImGuiLayer.h" />
-    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
+    <ClInclude Include="src\Platform\Vulkan\Vulkan.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLRenderer.h" />
+    <ClInclude Include="src\Platform\Vulkan\VkPipeline.h" />
+    <ClInclude Include="src\Platform\Vulkan\VkDevice.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Ono\Application.cpp">
-      <Filter>Ono</Filter>
+    <ClCompile Include="src\Ono\Core\App.cpp">
+      <Filter>Ono\Core</Filter>
     </ClCompile>
-    <ClCompile Include="src\Ono\Layer.cpp">
-      <Filter>Ono</Filter>
+    <ClCompile Include="src\Ono\Core\LayerStack.cpp">
+      <Filter>Ono\Core</Filter>
     </ClCompile>
-    <ClCompile Include="src\Ono\LayerStack.cpp">
-      <Filter>Ono</Filter>
+    <ClCompile Include="src\Ono\ImGui\ImGuiLayer.cpp">
+      <Filter>Ono\ImGui</Filter>
     </ClCompile>
-    <ClCompile Include="src\Ono\Log.cpp">
-      <Filter>Ono</Filter>
+    <ClCompile Include="src\Platform\OpenGL\Shaders\LoadShaders.cpp">
+      <Filter>Platform\OpenGL\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Vulkan\VkRenderer.cpp">
+      <Filter>Platform\Vulkan</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
       <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\onopch.cpp" />
-    <ClCompile Include="src\Ono\ImGui\ImGuiLayer.cpp" />
-    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
+    <ClCompile Include="src\Platform\Vulkan\Vulkan.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLRenderer.cpp" />
   </ItemGroup>
 </Project>

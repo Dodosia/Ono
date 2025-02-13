@@ -79,8 +79,8 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>onopch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>ONO_PLATFORM_WINDOWS;VOLK_IMPLEMENTATION;ONO_BUILD_DLL;ONO_ENABLE_ASSERTS;ONO_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>vendor\spdlog\include;src;vendor\GLFW\include;vendor\GLAD\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ONO_PLATFORM_WINDOWS;ONO_BUILD_DLL;ONO_ENABLE_ASSERTS;ONO_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>vendor\spdlog\include;src;vendor\GLAD\include;vendor\GLFW\include;vendor\imgui;vendor\VulkanSDK\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -91,6 +91,8 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>vulkan-1.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>vendor\VulkanSDK\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImportLibrary>..\bin\Debug-windows-x86_64\Ono\Ono.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
@@ -102,8 +104,8 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>onopch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>ONO_PLATFORM_WINDOWS;VOLK_IMPLEMENTATION;ONO_BUILD_DLL;ONO_ENABLE_ASSERTS;ONO_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>vendor\spdlog\include;src;vendor\GLFW\include;vendor\GLAD\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ONO_PLATFORM_WINDOWS;ONO_BUILD_DLL;ONO_ENABLE_ASSERTS;ONO_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>vendor\spdlog\include;src;vendor\GLAD\include;vendor\GLFW\include;vendor\imgui;vendor\VulkanSDK\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -118,6 +120,8 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>vulkan-1.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>vendor\VulkanSDK\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImportLibrary>..\bin\Release-windows-x86_64\Ono\Ono.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
@@ -129,8 +133,8 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>onopch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>ONO_PLATFORM_WINDOWS;VOLK_IMPLEMENTATION;ONO_BUILD_DLL;ONO_ENABLE_ASSERTS;ONO_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>vendor\spdlog\include;src;vendor\GLFW\include;vendor\GLAD\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ONO_PLATFORM_WINDOWS;ONO_BUILD_DLL;ONO_ENABLE_ASSERTS;ONO_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>vendor\spdlog\include;src;vendor\GLAD\include;vendor\GLFW\include;vendor\imgui;vendor\VulkanSDK\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -145,6 +149,8 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>vulkan-1.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>vendor\VulkanSDK\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImportLibrary>..\bin\Dist-windows-x86_64\Ono\Ono.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
@@ -153,36 +159,48 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\Ono.h" />
-    <ClInclude Include="src\Ono\Application.h" />
-    <ClInclude Include="src\Ono\Core.h" />
-    <ClInclude Include="src\Ono\EntryPoint.h" />
+    <ClInclude Include="src\Ono\Core\App.h" />
+    <ClInclude Include="src\Ono\Core\Core.h" />
+    <ClInclude Include="src\Ono\Core\EntryPoint.h" />
+    <ClInclude Include="src\Ono\Core\Layer.h" />
+    <ClInclude Include="src\Ono\Core\LayerStack.h" />
+    <ClInclude Include="src\Ono\Core\Window.h" />
     <ClInclude Include="src\Ono\ImGui\ImGuiLayer.h" />
-    <ClInclude Include="src\Ono\Layer.h" />
-    <ClInclude Include="src\Ono\LayerStack.h" />
-    <ClInclude Include="src\Ono\Log.h" />
-    <ClInclude Include="src\Ono\Window.h" />
-    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
+    <ClInclude Include="src\Ono\Renderer\Renderer.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLFrameBuffer.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLIndexBuffer.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLRenderer.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLShader.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLSwapChain.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLTexture.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLVertexBuffer.h" />
+    <ClInclude Include="src\Platform\OpenGL\Shaders\LoadShaders.h" />
+    <ClInclude Include="src\Platform\Vulkan\VkDevice.h" />
+    <ClInclude Include="src\Platform\Vulkan\VkPipeline.h" />
+    <ClInclude Include="src\Platform\Vulkan\VkRenderer.h" />
+    <ClInclude Include="src\Platform\Vulkan\Vulkan.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\onopch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Ono\Application.cpp" />
+    <ClCompile Include="src\Ono\Core\App.cpp" />
+    <ClCompile Include="src\Ono\Core\LayerStack.cpp" />
     <ClCompile Include="src\Ono\ImGui\ImGuiLayer.cpp" />
-    <ClCompile Include="src\Ono\Layer.cpp" />
-    <ClCompile Include="src\Ono\LayerStack.cpp" />
-    <ClCompile Include="src\Ono\Log.cpp" />
-    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLRenderer.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\Shaders\LoadShaders.cpp" />
+    <ClCompile Include="src\Platform\Vulkan\VkRenderer.cpp" />
+    <ClCompile Include="src\Platform\Vulkan\Vulkan.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\onopch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="vendor\GLAD\GLAD.vcxproj">
+      <Project>{5D4A857C-4981-860D-F26D-6C10DE83020F}</Project>
+    </ProjectReference>
     <ProjectReference Include="vendor\GLFW\GLFW.vcxproj">
       <Project>{154B857C-0182-860D-AA6E-6C109684020F}</Project>
-    </ProjectReference>
-    <ProjectReference Include="vendor\GlAD\GLAD.vcxproj">
-      <Project>{5D4A857C-4981-860D-F26D-6C10DE83020F}</Project>
     </ProjectReference>
     <ProjectReference Include="vendor\imgui\ImGui.vcxproj">
       <Project>{C0FF640D-2C14-8DBE-F595-301E616989EF}</Project>

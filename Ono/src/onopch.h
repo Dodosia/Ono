@@ -12,6 +12,7 @@
 #include <unordered_map>
 #include <unordered_set>
 #include <optional>
+#include <fstream>
 
 #ifdef ONO_PLATFORM_WINDOWS
 	#include <Windows.h>

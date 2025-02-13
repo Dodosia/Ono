@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Ono/Application.h"
-#include "Ono/Log.h"
-#include "Ono/ImGui/ImGuiLayer.h"
+#include "Ono/Core/App.h"
+#include "Ono/Core/Layer.h"
+#include "Ono/Core/LayerStack.h"
 
 // -----------------------------
-#include "Ono/EntryPoint.h"
+#include "Ono/Core/EntryPoint.h"

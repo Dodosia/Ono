@@ -14,9 +14,10 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "Ono/vendor/GLFW/include"
 IncludeDir["GLAD"] = "Ono/vendor/GLAD/include"
 IncludeDir["ImGui"] = "Ono/vendor/imgui"
+IncludeDir["Vulkan"] = "Ono/vendor/VulkanSDK/include"
 
+include "Ono/vendor/GLAD"
 include "Ono/vendor/GLFW"
-include "Ono/vendor/GlAD"
 include "Ono/vendor/imgui"
 
 project "Ono"
@@ -40,16 +41,23 @@ project "Ono"
 	{
 		"%{prj.name}/vendor/spdlog/include",
 		"%{prj.name}/src",
-		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.GLAD}",
-		"%{IncludeDir.ImGui}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.Vulkan}"
+	}
+
+	libdirs
+	{
+		"Ono/vendor/VulkanSDK/lib"
 	}
 
 	links
 	{
-		"GLFW",
 		"GLAD",
-		"ImGui"
+		"GLFW",
+		"ImGui",
+		"vulkan-1"
 	}
 
 	filter "system:windows"
@@ -60,7 +68,6 @@ project "Ono"
 		defines
 		{
 			"ONO_PLATFORM_WINDOWS",
-			"VOLK_IMPLEMENTATION",
 			"ONO_BUILD_DLL",
 			"ONO_ENABLE_ASSERTS"
 		}
@@ -102,7 +109,8 @@ project "Sandbox"
 	includedirs
 	{
 		"Ono/vendor/spdlog/include",
-		"Ono/src"
+		"Ono/src",
+		"%{IncludeDir.GLAD}"
 	}
 	
 	links
@@ -118,7 +126,6 @@ project "Sandbox"
 		defines
 		{
 			"ONO_PLATFORM_WINDOWS",
-			"ONO_PLATFORM_VULKAN",
 			"ONO_ENABLE_ASSERTS"
 		}
 

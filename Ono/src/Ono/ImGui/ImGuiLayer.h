@@ -1,20 +1,20 @@
 #pragma once
 
-#include "Ono/Layer.h"
+#include "Ono/Core/Core.h"
+#include "Ono/Core/Layer.h"
 
 namespace Ono
 {
 	class ONO_API ImGuiLayer : public Layer
 	{
 	public:
-		ImGuiLayer();
-		~ImGuiLayer();
+		ImGuiLayer(const std::string& name = "ImGuiLayer") {}
+		virtual ~ImGuiLayer() {}
 
-		void OnAttach();
-		void OnDetach();
-		void OnUpdate();
-
-	private:
-		float m_Time = 0.0f;
+		void Update() override;
+		void Attach() override;
+		void Detach() override;
+	protected:
+		std::string debug_name;
 	};
 }
