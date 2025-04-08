@@ -69,7 +69,8 @@ project "Ono"
 		{
 			"ONO_PLATFORM_WINDOWS",
 			"ONO_BUILD_DLL",
-			"ONO_ENABLE_ASSERTS"
+			"ONO_ENABLE_ASSERTS",
+			"GLFW_INCLUDE_VULKAN"
 		}
 
 		postbuildcommands

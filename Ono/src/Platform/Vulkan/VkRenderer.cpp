@@ -22,12 +22,12 @@ namespace Ono
 
 	void VkRenderer::Init()
 	{
-
+		CreateInstance();
 	}
 
 	void VkRenderer::Clear()
 	{
-		
+		vkDestroyInstance(instance, nullptr);
 	}
 
 	void VkRenderer::InitPipeline()
@@ -41,7 +41,7 @@ namespace Ono
 		appInfo.sType = VK_STRUCTURE_TYPE_APPLICATION_INFO;
 		appInfo.pApplicationName = "Hello Triangle";
 		appInfo.applicationVersion = VK_MAKE_VERSION(1, 0, 0);
-		appInfo.pEngineName = "Ono";
+		appInfo.pEngineName = "No Engine";
 		appInfo.engineVersion = VK_MAKE_VERSION(1, 0, 0);
 		appInfo.apiVersion = VK_API_VERSION_1_0;
 
@@ -58,7 +58,7 @@ namespace Ono
 
 		createInfo.enabledLayerCount = 0;
 
-		VK_CHECK(vkCreateInstance(&createInfo, nullptr, &vkInstance));
+		VK_CHECK(vkCreateInstance(&createInfo, nullptr, &instance));
 	}
 }
 

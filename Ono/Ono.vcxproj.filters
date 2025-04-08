@@ -49,9 +49,6 @@
     <ClInclude Include="src\Ono\Core\Window.h">
       <Filter>Ono\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Ono\ImGui\ImGuiLayer.h">
-      <Filter>Ono\ImGui</Filter>
-    </ClInclude>
     <ClInclude Include="src\Ono\Renderer\Renderer.h">
       <Filter>Ono\Renderer</Filter>
     </ClInclude>
@@ -59,6 +56,9 @@
       <Filter>Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\OpenGLIndexBuffer.h">
+      <Filter>Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLRenderer.h">
       <Filter>Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\OpenGLShader.h">
@@ -76,17 +76,22 @@
     <ClInclude Include="src\Platform\OpenGL\Shaders\LoadShaders.h">
       <Filter>Platform\OpenGL\Shaders</Filter>
     </ClInclude>
+    <ClInclude Include="src\Platform\Vulkan\VkDevice.h">
+      <Filter>Platform\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Vulkan\VkPipeline.h">
+      <Filter>Platform\Vulkan</Filter>
+    </ClInclude>
     <ClInclude Include="src\Platform\Vulkan\VkRenderer.h">
+      <Filter>Platform\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Vulkan\Vulkan.h">
       <Filter>Platform\Vulkan</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
       <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\onopch.h" />
-    <ClInclude Include="src\Platform\Vulkan\Vulkan.h" />
-    <ClInclude Include="src\Platform\OpenGL\OpenGLRenderer.h" />
-    <ClInclude Include="src\Platform\Vulkan\VkPipeline.h" />
-    <ClInclude Include="src\Platform\Vulkan\VkDevice.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Ono\Core\App.cpp">
@@ -95,8 +100,8 @@
     <ClCompile Include="src\Ono\Core\LayerStack.cpp">
       <Filter>Ono\Core</Filter>
     </ClCompile>
-    <ClCompile Include="src\Ono\ImGui\ImGuiLayer.cpp">
-      <Filter>Ono\ImGui</Filter>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLRenderer.cpp">
+      <Filter>Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\Shaders\LoadShaders.cpp">
       <Filter>Platform\OpenGL\Shaders</Filter>
@@ -104,11 +109,13 @@
     <ClCompile Include="src\Platform\Vulkan\VkRenderer.cpp">
       <Filter>Platform\Vulkan</Filter>
     </ClCompile>
+    <ClCompile Include="src\Platform\Vulkan\Vulkan.cpp">
+      <Filter>Platform\Vulkan</Filter>
+    </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
       <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\onopch.cpp" />
-    <ClCompile Include="src\Platform\Vulkan\Vulkan.cpp" />
-    <ClCompile Include="src\Platform\OpenGL\OpenGLRenderer.cpp" />
+    <ClCompile Include="src\Platform\Vulkan\VkDevice.cpp" />
   </ItemGroup>
 </Project>

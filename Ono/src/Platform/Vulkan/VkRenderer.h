@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Ono/Renderer/Renderer.h"
-#include "VkPipeline.h"
+#include "vulkan/vulkan.h"
 
 namespace Ono
 {
@@ -17,6 +17,6 @@ namespace Ono
 		void InitPipeline();
 		void CreateInstance();
 
-		VkInstance vkInstance;
+		VkInstance instance;
 	};
 }

@@ -1,11 +1,11 @@
 #pragma once
 #include "onopch.h"
 #include "vulkan/vulkan.h"
-#include "backends/imgui_impl_vulkan.h"
+//#include "backends/imgui_impl_vulkan.h"
 
 namespace vkb
 {
-	const std::string to_string(VkResult result)
+	inline const std::string to_string(VkResult result)
 	{
 		switch (result)
 		{
